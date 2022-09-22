@@ -1,4 +1,5 @@
 
+
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.BufferedReader;
@@ -13,12 +14,14 @@ import java.util.ArrayList;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-class PrereqsJUnitTester {
+@Tag("tester")
+public class IndexBlobTester {
 	
 	@BeforeAll
-	static void setUpBeforeClass() throws Exception {
+	public static void setUpBeforeClass() throws Exception {
 		File testText=new File("myTesterText.txt");
 		testText.createNewFile();
 		
@@ -39,7 +42,7 @@ class PrereqsJUnitTester {
 	//Charlie-s-GitPrereqs/objects 
 	
 	@AfterAll
-	static void tearDownAfterClass() throws Exception {
+	public static void tearDownAfterClass() throws Exception {
 		File testText=new File("myTesterText.txt");
 		testText.delete();
 		File testText2=new File("myTesterText2.txt");
@@ -62,7 +65,8 @@ class PrereqsJUnitTester {
 	}
 	
 	@Test
-	void testBlob() throws Exception {
+	@Tag("tester")
+	public void testBlob() throws Exception {
 		File objectsFolder=new File("./objects");
 		objectsFolder.mkdir();
 		
@@ -76,7 +80,8 @@ class PrereqsJUnitTester {
 	
 	
 	@Test //write one big test index tester ig
-	void testInit() throws Exception {
+	@Tag("tester")
+	public void testInit() throws Exception {
 		Index dexy=new Index();
 		dexy.init();
 		
@@ -90,7 +95,8 @@ class PrereqsJUnitTester {
 	
 	//make interface to his code
 	@Test
-	void testAdd() throws Exception {
+	@Tag("tester")
+	public void testAdd() throws Exception {
 		Index dexy=new Index();
 		dexy.init();
 		
@@ -128,7 +134,8 @@ class PrereqsJUnitTester {
 		
 	}
 	@Test
-	void remove() throws Exception {
+	@Tag("tester")
+	public void remove() throws Exception {
 		Index dexy=new Index();
 		dexy.init();
 		
@@ -160,7 +167,8 @@ class PrereqsJUnitTester {
 	}
 	
 	@Test
-	void tree() throws Exception {
+	@Tag("tester")
+	public void tree() throws Exception {
 		ArrayList<String> test = new ArrayList<String>();
 		
 		test.add("blob : 81e0268c84067377a0a1fdfb5cc996c93f6dcf9f");
@@ -173,7 +181,4 @@ class PrereqsJUnitTester {
 		File tester=new File(".objects/dd4840f48a74c1f97437b515101c66834b59b1be");
 		assertTrue(!tester.exists());
 	}
-	
-	
-
 }

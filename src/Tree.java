@@ -8,6 +8,7 @@ import java.util.*;
 public class Tree {
 	ArrayList<String> indeces=new ArrayList<String>();
 	String fileData="";
+	
 	public Tree(ArrayList<String> input) {
 		indeces=input;
 		for(int i=0;i<indeces.size();i++) {

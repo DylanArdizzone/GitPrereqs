@@ -4,7 +4,7 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.jupiter.api.Test;
 import org.junit.platform.suite.api.IncludeClassNamePatterns;
-//import org.junit.platform.suite.api.IncludeTags;
+import org.junit.platform.suite.api.IncludeTags;
 import org.junit.platform.suite.api.SelectPackages;
 import org.junit.platform.suite.api.Suite;
 import org.junit.platform.suite.api.SuiteDisplayName;
@@ -17,7 +17,8 @@ import org.junit.platform.suite.api.SuiteDisplayName;
 @SuiteDisplayName("Git Project Tester")
 @SelectPackages("(default package)")
 @IncludeClassNamePatterns(".*Tester")
-class AllTests {
+@IncludeTags("tester")
+public class AllTests {
     
     @Test
     public void test() {
